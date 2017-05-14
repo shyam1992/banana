@@ -1,0 +1,215 @@
+/*Font References */
+/* vietnamese */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url(https://fonts.gstatic.com/s/inconsolata/v15/BjAYBlHtW3CJxDcjzrnZCL6up8jxqWt8HVA3mDhkV_0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url(https://fonts.gstatic.com/s/inconsolata/v15/BjAYBlHtW3CJxDcjzrnZCCYE0-AqJ3nfInTTiDXDjU4.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url(https://fonts.gstatic.com/s/inconsolata/v15/BjAYBlHtW3CJxDcjzrnZCI4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/*Font References */
+body{
+	overflow: hidden;
+}
+.primaryTextArea{
+	position: absolute;
+	width: 100%;
+	height: 95%;
+	background-color: #fff;
+	border: solid 1px #e6e6e6;
+	resize: none;
+	overflow: hidden;
+	top: 33px;
+    left: 0;
+    padding-left: 40px;
+    z-index: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    word-wrap: break-word;
+    font-family: 'Inconsolata', monospace;
+    line-height: 1.3;
+    font-size: 14px;
+}
+textarea:focus{
+	outline: 0;
+}
+button:focus{
+	outline: 0;
+}
+.linesCount{
+    width: 40px;
+    border-right: 1px solid #ffaaff;
+    height: 94%;
+    z-index: 9;
+    position: absolute;
+    top: 33px;
+    left: 0;
+    background-color: #a6a6a6;
+    color: white;
+    font-family: monospace;
+    padding: 3px 0px; 
+    text-align: right;
+    overflow: hidden;
+}
+.linesCount p{
+	margin: 0;
+    padding: 0px 4px;
+    height: 18px;
+    /*border-bottom: 1px solid #fcfcfc;*/
+}
+.tabContentVisible{
+	overflow: hidden;
+}
+.beautifyBtn{
+	position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 80px;
+    height: 40px;
+    background-color: #0088ee;
+    border: none;
+    color: white;
+    font-family: verdana;
+    cursor: pointer;
+    box-shadow:1px 2px 3px #6e6e6e;
+}
+.beautifyBtn:hover{
+    background-color: #efefef;
+    color: black;
+    font-family: georgia;
+    font-weight: bold;
+    box-shadow:1px 2px 3px #6e6e6e;
+}
+.clearBtn{
+position: fixed;
+    top: 100px;
+    right: 50px;
+    width: 80px;
+    height: 40px;
+    background-color: #0088ee;
+    border: none;
+    color: white;
+    font-family: verdana;
+    cursor: pointer;
+    box-shadow:1px 2px 3px #6e6e6e;
+	}
+.clearBtn:hover{
+    background-color: #efefef;
+    color: black;
+    font-family: georgia;
+    font-weight: bold;
+    box-shadow:1px 2px 3px #6e6e6e;
+}
+button:active{
+box-shadow: none !important;
+}
+ /* Style the tab */
+div.tab {
+    overflow: hidden;
+    background-color: #efefef;
+    width: 100%;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    height: 30px;
+    font-family: 'proximaNova-light', sans-serif;
+    font-size: 14px;
+    padding-top: 3px;
+}
+
+/* Style the buttons inside the tab */
+div.tab .tabElm {
+    background-color: #7fb5da;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px 2px 16px;
+    transition: 0.3s;
+    border-radius: 5px 5px 0px 0px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px 3px;
+}
+div.tab .tabElm p{
+	margin: 0;
+	display: inline;
+}
+.tabElm button:not(.addBtn){
+	position: relative;
+    top: -3px;
+    right: -10px;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 800;
+    padding: 0px;
+    color: white;
+}
+.tabElm button:not(.addBtn):hover{
+    text-shadow:1px 1px 1px #000000;
+}
+.addBtn{
+	background-color: transparent;
+    border: none;
+    font-size: 18px;
+    margin-top: -5px;
+    cursor: pointer;
+    font-family: fantasy;
+}
+/* Change background color of buttons on hover */
+div.tab .tabElm:hover {
+    /*background-color: #80c8ff !important;*/
+}
+
+/* Create an active/current tablink class */
+div.tab .tabElm.active {
+    background-color: white;
+    z-index: 999;
+    box-shadow: 0px 0px 2px #001d33;
+    color: #4c4c4c;
+}
+div.tab .tabElm.active button{
+	color: #4c4c4c;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+}
+
+/*Error Dispaly Area */
+.errorArea{
+	font-family: verdana;
+	position: absolute;
+	bottom: 50px;
+	right: 20px;
+	z-index: 999;
+	border: 1px solid #000000;
+	box-shadow: 2px 2px 3px #eeeeee;
+	min-width: 180px;
+	min-height: 100px;
+	display: none;
+	background-color: rgba(255,255,255,0.5);
+}
+.errorArea h4{
+	color:red;
+}
