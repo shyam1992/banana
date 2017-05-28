@@ -14,6 +14,7 @@
       <link rel="stylesheet" type="text/css" href="css/main.css"/>
    </head>
    <body>
+   <section class="regular">
       <div class="tab">
          <div class="tabElm active" id="tab_0" data-tab="0" onclick="fnMakeCurrentTab(this,event)">
             <p>New Tab</p>
@@ -39,7 +40,26 @@
             </div>
          </section>
       </div>
+      </section>
+      <section class="split dispnone">
+         <div class="diffcheckers">
+              <h1>Difference By</h1>
+                     <label><input name="diff_type" value="diffChars" checked="" type="radio"> Chars</label>
+                     <label><input name="diff_type" value="diffWords" type="radio"> Words</label>
+                     <label><input name="diff_type" value="diffLines" type="radio"> Lines</label> 
+                     <button class="compareBtn" onclick="splitTabs.fnCompare()">Compare</button>
+         </div>
+         <div class="" style="height:100%">
+            <textarea id="firstSplit" class="splitTextArea width50"></textarea>
+            <div id="diffDisplay" class="width30 dispnone diffDisplay" wrap="off">
+            <!--<button class="diffCloseBtn">x</button>-->
+            </div>
+            <textarea id="secondSplit" class="splitTextArea width50"></textarea>
+         </div>
+      </section>
       <script type="text/javascript" src="js/commonMethods.js"></script>
       <script type="text/javascript" src="js/beautifier.js"></script>
+      <script type="text/javascript" src="js/diff.js"></script>
+      <script type="text/javascript" src="js/splitTabs.js"></script>
    </body>
 </html>

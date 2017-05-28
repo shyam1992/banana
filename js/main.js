@@ -172,7 +172,12 @@ const template = [
       {role: 'resetzoom'},
       {role: 'zoomin'},
       {role: 'zoomout'},
-      {role: 'togglefullscreen'}
+      {role: 'togglefullscreen'},
+      {
+        label: 'Split Tabs',
+        accelerator:'CommandOrControl+Shift+m',
+        click: function() {  win.webContents.send('spiltTabs','');}
+      }
     ]
   },
   {

@@ -2,6 +2,7 @@ let tabslength = 0;
 let totalTabs = 0;
 var FileMap = new Map();
 const ele = require('electron');
+/*inter process communication methods*/
 ele.ipcRenderer.on('openFile',(event,message,filePath) =>{
 	fnAddNewTab();
 	$("#tabContent_"+tabslength).find("textarea").val(message);
@@ -39,6 +40,13 @@ ele.ipcRenderer.on('CloseAllTab',(event,message) =>{
 	var html='<div class="tab"><div class="tabElm active" id="tab_0" data-tab="0" onclick="fnMakeCurrentTab(this,event)"><p>New Tab</p><button class="" onclick="fnRemoveTab(this,event)">x</button></div><div class="tabElm" id="addBtnTab" onclick="fnAddNewTab()"><p></p><button class="addBtn">+</button></div></div><div class="data"><section id="tabContent_0" class="tabContentVisible"><div class="linesCount"><p class="line">1</p></div><textarea class="primaryTextArea" id="primaryTextArea" onkeyup="beautifier.fnContentChange(this,event)" onchange="beautifier.fnContentChange(this,event)" onscroll="beautifier.fntextAreaScroll(this,event)"></textarea><button onclick="beautifier.fnBeautifier(this,event)" class="beautifyBtn">Validate</button><button onclick="beautifier.fnClear(this,event)" class="clearBtn">Clear</button><div class="errorArea"><h4>Error</h4></div></section></div>'
 	$('body').append(html);
 });
+ele.ipcRenderer.on('spiltTabs',(event,message) =>{
+	// confirm("Do you Really want to continue?\n Please make sure you have saved the current work.");
+	$(".split").toggleClass("dispnone");
+	$(".regular").toggleClass("dispnone");
+});
+/*inter process communication methods*/
+/*common methods*/
 fnAddNewTab = function () {
 	tabslength++;
 	if (totalTabs >= 10) {
